@@ -78,5 +78,15 @@ fi
 
 gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Moon"
 
+# ----------------------------
+# Install system-wide fonts
+# ----------------------------
+if [ -d "$SCRIPT_DIR/hypr/fonts" ]; then
+    echo "Installing fonts system-wide..."
+    sudo mkdir -p /usr/share/fonts/TTF
+    sudo cp -r "$SCRIPT_DIR/hypr/fonts/"* /usr/share/fonts/TTF/
+    sudo fc-cache -fv
+fi
+
 echo "Setup complete."
 echo "Restart your session or run: exec zsh"
