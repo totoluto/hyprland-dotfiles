@@ -1,7 +1,3 @@
-Here’s a **much simpler version** of your README, keeping the essentials and adding a clear **place for a screenshot**, while removing all emojis:
-
----
-
 # Hyprland Desktop Environment Configuration
 
 ## Overview
@@ -10,16 +6,12 @@ This repository provides a ready-to-use configuration for the Hyprland window ma
 
 ![Screenshot](screenshots/image.png)
 
----
-
 ## Features
 
 * Installation script to set up Hyprland and related applications.
 * Pre-configured settings for Waybar, Kitty, Flameshot, Rofi, Hyprlock, Hyprpaper, SwayNC, and FastFetch.
 * System-wide font and GTK theme installation.
 * Customizable workflow with keyboard shortcuts, autostart, and floating windows.
-
----
 
 ## Installation
 
