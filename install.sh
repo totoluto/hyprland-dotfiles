@@ -11,10 +11,12 @@ echo "Starting setup..."
 # ----------------------------
 paru -S --needed --noconfirm --skipreview \
   ttf-jetbrains-mono-nerd \
-  gtk-engine-murrine \
+  gtk-engine-murrine
 
 sudo pacman -S --needed --noconfirm \
   flameshot \
+  grim \
+  slurp \
   hyprpicker \
   xdg-desktop-portal-hyprland \
   hyprlock \
@@ -42,6 +44,10 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
     ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
+
+if [ -f "$SCRIPT_DIR/.zshrc" ]; then
+    cp "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 fi
 
 if [ -f "$HOME/.zshrc" ]; then

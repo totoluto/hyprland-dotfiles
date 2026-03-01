@@ -8,8 +8,8 @@
     "control-center-layer": "top",
     "layer-shell": true,
 
+    "fit-to-screen": true,
     "control-center-width": 400,
-    "control-center-height": 850,
     "control-center-margin-top": 10,
     "control-center-margin-bottom": 10,
     "control-center-margin-right": 10,
