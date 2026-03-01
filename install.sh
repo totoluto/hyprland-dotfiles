@@ -11,10 +11,10 @@ echo "Starting setup..."
 # ----------------------------
 paru -S --needed --noconfirm --skipreview \
   ttf-jetbrains-mono-nerd \
+  gtk-engine-murrine \
 
 sudo pacman -S --needed --noconfirm \
   flameshot \
-  gtk-engine-murrine \
   hyprpicker \
   xdg-desktop-portal-hyprland \
   hyprlock \
