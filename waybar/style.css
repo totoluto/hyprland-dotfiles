@@ -1,0 +1,80 @@
+@import "./colors.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Rubik", "JetBrainsMono Nerd Font Propo";
+    font-size: 16px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.modules-left {
+    margin-left: 24px;
+}
+
+.modules-right {
+    margin-right: 24px;
+}
+
+.modules-center, 
+.modules-left, 
+.modules-right {
+    background: @surface0;
+    padding: 6px 12px;
+    border-radius: 28px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @surface1;
+    border: 1px solid @surface2;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @text;
+    padding: 6px
+}
+
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    margin: 0px 2px;
+    border-radius: 16px;
+    color: @text;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @blue 0%, @purple 100%);
+    color: @surface0;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @text;
+    background: @surface1;
+}
+
+#workspaces button.urgent {
+    background: @red;
+    color: @surface0;
+}
+
+#tray {
+  margin-right: 12px;
+}
