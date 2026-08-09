@@ -13,7 +13,6 @@ LEGACY_PACKAGES=(
   waybar
   swaync
   rofi
-  rofi-wayland
   blueman
   network-manager-applet
 )
