@@ -1,0 +1,9 @@
+# Ignore all dashboard plugins by default
+*
+
+# Keep this .gitignore itself
+!.gitignore
+
+# Keep the example plugin in Git
+!example/
+!example/**

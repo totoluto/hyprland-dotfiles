@@ -1,0 +1,12 @@
+{
+    "id": "example",
+    "name": "Example",
+    "description": "Example dashboard plugin",
+    "icon": "󰒓",
+    "version": 1,
+
+    "defaultColumns": 1,
+    "defaultRows": 1,
+
+    "hasSettings": true
+}
