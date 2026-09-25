@@ -8,10 +8,19 @@ Singleton {
 
     property string device: ""
     property real value: 0
+    property real max: 0
     property bool available: false
 
     function clamp(value) {
-        return Math.max(0, Math.min(1, value));
+        return Math.max(0.1, Math.min(1, value));
+    }
+
+    function setMax() {
+        if (root.device.length === 0) {
+            return ;
+        }
+
+        queryMaxProcess.exec(["brightnessctl", "-d", root.device, "max"]);
     }
 
     function refresh() {
@@ -19,7 +28,7 @@ Singleton {
             return ;
         }
 
-        queryProcess.exec(["brightnessctl", "-d", root.device, "-P", "get"]);
+        queryProcess.exec(["brightnessctl", "-d", root.device, "get"]);
     }
 
     function setBrightness(value) {
@@ -48,6 +57,7 @@ Singleton {
                 }
                 root.device = result;
                 console.log("Brightness device:", root.device);
+                root.setMax();
                 root.refresh();
             }
         }
@@ -66,7 +76,26 @@ Singleton {
                     console.warn("Brightness: invalid brightnessctl output:", result);
                     return ;
                 }
-                root.value = root.clamp(percentage / 100);
+                root.value = root.clamp(percentage / root.max);
+                root.available = true;
+            }
+        }
+
+    }
+
+    Process {
+        id: queryMaxProcess
+
+        stdout: StdioCollector {
+            onStreamFinished: {
+                const result = text.trim();
+                const percentage = parseInt(result);
+                if (isNaN(percentage)) {
+                    root.available = false;
+                    console.warn("Brightness: invalid brightnessctl output:", result);
+                    return ;
+                }
+                root.max = result;
                 root.available = true;
             }
         }
