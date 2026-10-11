@@ -4,6 +4,7 @@ import Quickshell.Hyprland
 import qs.components
 import qs.config
 import qs.modules.calendar
+import qs.modules.update
 import qs.theme
 
 Scope {
@@ -61,12 +62,13 @@ Scope {
             anchors.left: parent.left
             anchors.top: parent.top
 
-            Tray {
+            Tray {}
+
+            Update {
+                targetScreen: root.targetScreen
             }
 
-            Battery {
-            }
-
+            Battery {}
         }
 
         TopIsland {
