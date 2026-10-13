@@ -8,7 +8,7 @@ RowLayout {
     id: root
 
     readonly property var battery: UPower.displayDevice
-    readonly property int percentage: battery.ready ? Math.round(battery.percentage) : 0
+    readonly property int percentage: battery.ready ? Math.round(battery.percentage * 100) : 0
     readonly property bool charging: battery.ready && (battery.state === UPowerDeviceState.Charging || battery.state === UPowerDeviceState.PendingCharge)
 
     function batteryIcon() : string {
